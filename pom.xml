@@ -8,9 +8,15 @@
   <name>Library</name>
   <url>http://maven.apache.org</url>
   <properties>
+<<<<<<< HEAD
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
+=======
+  <maven.compiler.target>1.8</maven.compiler.target>
+  <maven.compiler.source>1.8</maven.compiler.source>
+</properties>
+>>>>>>> 77867d15ccfe250acab3f76c02fa6cf7741d168e
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
