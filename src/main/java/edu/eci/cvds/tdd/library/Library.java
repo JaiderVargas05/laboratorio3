@@ -35,8 +35,13 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
-        //TODO Implement the logic to add a new book into the map.
-        return false;
+        if(book.containsKey(book) {
+            book.put(book, books.get(book)+1 );
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
     /**
