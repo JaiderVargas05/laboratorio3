@@ -25,6 +25,14 @@ public class Library {
     }
 
     /**
+     * get the hashmap with the information about available books.
+     * @return hashmap of books
+     */
+    public Map<Book, Integer> getBooks(){
+        return this.books;
+    }
+
+    /**
      * Adds a new {@link edu.eci.cvds.tdd.library.book.Book} into the system, the book is store in a Map that contains
      * the {@link edu.eci.cvds.tdd.library.book.Book} and the amount of books available, if the book already exist the
      * amount should increase by 1 and if the book is new the amount should be 1, this method returns true if the
@@ -35,13 +43,13 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
-        if(books.containsKey(book){
-            book.put(book, books.get(book)+1 );
+        if(!books.containsKey(book)){
+            books.put(book, 1 );
             return true;
-        }else {
+        }
+        else {
             return false;
         }
-
     }
 
     /**
