@@ -92,13 +92,16 @@ public class Library {
      */
     public Loan loanABook(String userId, String isbn) {
         //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
+
+        Book book = books.keySet().stream().filter(bk->bk.getIsbn().equals(isbn)).findFirst().orElseThrow(() -> new IllegalArgumentException("Book does not exist"));
+        if(books.get(book)==0) throw new IllegalArgumentException("There are not available books");
+        User user = users.stream().filter(usr -> usr.getId().equals(userId)).findFirst().orElseThrow(() -> new IllegalArgumentException("User does not exist"));
         Loan loan = new Loan();
-        Book book = books.keySet().stream().filter(bk->bk.getIsbn().equals(isbn)).findFirst().orElseThrow(() -> new IllegalArgumentException("User does not exist"));;
-        User user = users.stream().filter(usr -> usr.getId().equals(userId)).findFirst().orElseThrow(() -> new IllegalArgumentException("Book does not exist"));;
         loan.setBook(book);
         loan.setUser(user);
         loan.setLoanDate(LocalDateTime.now());
         loan.setStatus(LoanStatus.ACTIVE);
+        books.replace(book, books.get(book)-1);
         loans.add(loan);
         return loan;
     }

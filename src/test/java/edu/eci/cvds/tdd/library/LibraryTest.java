@@ -82,7 +82,17 @@ public class LibraryTest {
         this.library.addBook(book);
         assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(null,null));
     }
-    @
+    @Test
+    public void shouldNot_loanABook_whenItIsUnavailable(){
+        this.library.addUser(user);
+        this.library.addBook(book);
+        this.library.loanABook(user.getId(),book.getIsbn());
+        assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(user.getId(),book.getIsbn()));
+    }
+    @Test
+    public void shouldNot_loanABook_whenTheUserAlreadyHasALoanForTheSameBook(){
+
+    }
 //    @Test
 //    public void shouldExistsBook(){
 //
