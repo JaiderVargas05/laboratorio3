@@ -44,6 +44,7 @@ public class Library {
      */
     public boolean addBook(Book book) {
             if(book == null) return false;
+            if(book.getIsbn() == null || book.getIsbn().isEmpty() ) return false;
             if(!books.containsKey(book)){
                 for(Book bk : books.keySet()){
                     if(bk.getIsbn()==book.getIsbn()){

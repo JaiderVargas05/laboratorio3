@@ -45,6 +45,13 @@ public class LibraryTest {
 
     }
 
+    @Test
+    public void shouldNot_addBook_whenItHasEmptyOrNullIsbn(){
+        Book invalidBook1 = new Book("Halo","Epic",null);
+        assertFalse(this.library.addBook(invalidBook1));
+        Book invalidBook2 = new Book("Halo","Epic","");
+        assertFalse(this.library.addBook(invalidBook2));
+    }
 //    @Test
 //    public void shouldExistsBook(){
 //
