@@ -32,6 +32,18 @@ public class LibraryTest {
         this.library.addBook(book);
         assertEquals(this.library.getBooks().get(book),1);
     }
+    @Test
+    public void sholdNot_addBook_whenItIsNull(){
+        assertFalse(this.library.addBook(null));
+    }
+
+    @Test
+    public void shouldNot_addBook_whenItHasSameIsbnButDifferentNameOrAuthor(){
+        this.library.addBook(book);
+        Book invalidBook = new Book("Scorpio City","Mario Mendoza","666");
+        assertFalse(this.library.addBook(invalidBook));
+
+    }
 
 //    @Test
 //    public void shouldExistsBook(){

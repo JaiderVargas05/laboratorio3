@@ -43,7 +43,13 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
+            if(book == null) return false;
             if(!books.containsKey(book)){
+                for(Book bk : books.keySet()){
+                    if(bk.getIsbn()==book.getIsbn()){
+                        return false;
+                    }
+                }
                 books.put(book, 1 );
                 return true;
             }

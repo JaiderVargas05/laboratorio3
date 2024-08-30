@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3dba758c-282c-46b7-b173-d5cd82ceca33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/tdd/library/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/tdd/library/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/eci/cvds/tdd/library/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/eci/cvds/tdd/library/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Library-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Library-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.eci.cvds.tdd.library.LibraryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.eci.cvds.tdd.library.LibraryTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.eci.cvds.tdd.library.LibraryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.eci.cvds.tdd.library.LibraryTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/edu/eci/cvds/tdd/library/LibraryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/eci/cvds/tdd/library/LibraryTest.class" afterDir="false" />
