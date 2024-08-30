@@ -27,6 +27,12 @@ public class LibraryTest {
         this.library.addBook(book);
         assertEquals(this.library.getBooks().get(book),2);
     }
+    @Test
+    public void should_StartsWithOneBook_WhenIsNew(){
+        this.library.addBook(book);
+        assertEquals(this.library.getBooks().get(book),1);
+    }
+
 //    @Test
 //    public void shouldExistsBook(){
 //
