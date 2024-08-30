@@ -96,6 +96,8 @@ public class Library {
         Book book = books.keySet().stream().filter(bk->bk.getIsbn().equals(isbn)).findFirst().orElseThrow(() -> new IllegalArgumentException("Book does not exist"));
         if(books.get(book)==0) throw new IllegalArgumentException("There are not available books");
         User user = users.stream().filter(usr -> usr.getId().equals(userId)).findFirst().orElseThrow(() -> new IllegalArgumentException("User does not exist"));
+        boolean existLoan = loans.stream().anyMatch(ln -> ln.getUser().getId().equals(userId) && ln.getBook().getIsbn().equals(isbn));
+        if(existLoan) throw new IllegalArgumentException("The user already has a loan for that book");
         Loan loan = new Loan();
         loan.setBook(book);
         loan.setUser(user);

@@ -85,13 +85,20 @@ public class LibraryTest {
     @Test
     public void shouldNot_loanABook_whenItIsUnavailable(){
         this.library.addUser(user);
+        User user2 = new User();
+        user.setName("Jaider");
+        user.setId("000");
         this.library.addBook(book);
         this.library.loanABook(user.getId(),book.getIsbn());
-        assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(user.getId(),book.getIsbn()));
+        assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(user2.getId(),book.getIsbn()));
     }
     @Test
     public void shouldNot_loanABook_whenTheUserAlreadyHasALoanForTheSameBook(){
-
+        this.library.addUser(user);
+        this.library.addBook(book);
+        this.library.addBook(book);
+        this.library.loanABook(user.getId(),book.getIsbn());
+        assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(user.getId(),book.getIsbn()));
     }
 //    @Test
 //    public void shouldExistsBook(){
