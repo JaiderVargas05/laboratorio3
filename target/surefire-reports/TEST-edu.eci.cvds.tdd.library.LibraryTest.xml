@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.eci.cvds.tdd.library.LibraryTest" time="0.129" tests="8" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.eci.cvds.tdd.library.LibraryTest" time="0.071" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\ditov\AppData\Local\Temp\surefire3189173568893740861\surefirebooter-20240830072346220_3.jar C:\Users\ditov\AppData\Local\Temp\surefire3189173568893740861 2024-08-30T07-23-45_983-jvmRun1 surefire-20240830072346220_1tmp surefire_0-20240830072346220_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ditov\AppData\Local\Temp\surefire8224632630698933777\surefirebooter-20240830110709471_3.jar C:\Users\ditov\AppData\Local\Temp\surefire8224632630698933777 2024-08-30T11-07-09_286-jvmRun1 surefire-20240830110709471_1tmp surefire_0-20240830110709471_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\ditov\OneDrive\Desktop\CVDS\laboratorio3\target\test-classes;C:\Users\ditov\OneDrive\Desktop\CVDS\laboratorio3\target\classes;C:\Users\ditov\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\ditov\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ditov\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\ditov\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ditov\AppData\Local\Temp\surefire3189173568893740861\surefirebooter-20240830072346220_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ditov\AppData\Local\Temp\surefire8224632630698933777\surefirebooter-20240830110709471_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.2+9-70"/>
@@ -59,25 +59,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="shouldNot_addBook_whenItHasSameIsbnButDifferentNameOrAuthor" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.041"/>
-  <testcase name="should_loanABook_whenUserExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.017">
-    <failure message="expected: &lt;0&gt; but was: &lt;1&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at edu.eci.cvds.tdd.library.LibraryTest.should_loanABook_whenUserExists(LibraryTest.java:65)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
-  </testcase>
-  <testcase name="shouldNot_addBook_whenItHasEmptyOrNullIsbn" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.002"/>
-  <testcase name="sholdNot_addBook_whenItIsNull" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.003"/>
-  <testcase name="should_IncreaseQuantity_WhenTheBookAlredyExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.002"/>
-  <testcase name="should_AddBook_WhenTheBookAlredyExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.001"/>
-  <testcase name="should_AddNewBook_WhenNotExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.002"/>
+  <testcase name="shouldNot_addBook_whenItHasSameIsbnButDifferentNameOrAuthor" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.021"/>
+  <testcase name="shouldNot_loanABook_whenUserNotExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.002"/>
+  <testcase name="shouldNot_addBook_whenItHasEmptyOrNullIsbn" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.001"/>
+  <testcase name="sholdNot_addBook_whenItIsNull" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.001"/>
+  <testcase name="should_loanABook_whenUserAndBookExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.009"/>
+  <testcase name="should_IncreaseQuantity_WhenTheBookAlredyExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.001"/>
+  <testcase name="shouldNot_loanABook_whenBookNotExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.001"/>
+  <testcase name="should_AddBook_WhenTheBookAlredyExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.004"/>
+  <testcase name="should_AddNewBook_WhenNotExists" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.0"/>
   <testcase name="should_StartsWithOneBook_WhenIsNew" classname="edu.eci.cvds.tdd.library.LibraryTest" time="0.001"/>
 </testsuite>

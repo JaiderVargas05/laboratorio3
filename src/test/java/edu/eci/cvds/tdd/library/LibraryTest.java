@@ -67,6 +67,17 @@ public class LibraryTest {
         assertEquals(loan.getUser(),user);
         assertEquals(this.library.getLoans().size(),1);
     }
+    @Test
+    public void shouldNot_loanABook_whenBookNotExists(){
+        this.library.addUser(user);
+        assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(user.getId(),book.getIsbn()));
+    }
+    @Test
+    public void shouldNot_loanABook_whenUserNotExists(){
+        this.library.addBook(book);
+        assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(user.getId(),book.getIsbn()));
+
+    }
 //    @Test
 //    public void shouldExistsBook(){
 //
