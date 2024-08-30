@@ -35,10 +35,10 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
-        if(book.containsKey(book) {
+        if(books.containsKey(book){
             book.put(book, books.get(book)+1 );
             return true;
-        }else{
+        }else {
             return false;
         }
 
