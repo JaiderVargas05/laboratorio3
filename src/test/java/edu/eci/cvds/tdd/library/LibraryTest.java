@@ -9,13 +9,24 @@ public class LibraryTest {
     private Book book;
     @BeforeEach
     public void init(){
-        library = new Library();
-        book = new Book("Satanás","Mario Mendoza","666");
+        this.library = new Library();
+        this.book = new Book("Satanás","Mario Mendoza","666");
     }
     @Test
-    public void shouldAddNewBook(){
+    public void should_AddNewBook_WhenNotExists(){
         assertTrue(this.library.addBook(book));
     }
+    @Test
+    public void should_AddBook_WhenTheBookAlredyExists(){
+        this.library.addBook(book);
+        assertTrue(this.library.addBook(book));
+    }
+//    @Test
+//    public void should_IncreaseQuantity_WhenTheBookAlredyExists(){
+//        this.library.addBook(book);
+//        this.library.addBook(book);
+//        assertEquals(this.library.getBooks().size(),2);
+//    }
 //    @Test
 //    public void shouldExistsBook(){
 //
