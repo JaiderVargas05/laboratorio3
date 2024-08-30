@@ -2,15 +2,21 @@ package edu.eci.cvds.tdd.library;
 import static org.junit.jupiter.api.Assertions.*;
 
 import edu.eci.cvds.tdd.library.book.Book;
+import edu.eci.cvds.tdd.library.user.User;
+import edu.eci.cvds.tdd.library.loan.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 public class LibraryTest {
     private Library library;
     private Book book;
+    private User user;
     @BeforeEach
     public void init(){
         this.library = new Library();
         this.book = new Book("Satanás","Mario Mendoza","666");
+        this.user = new User();
+        user.setName("Sofia");
+        user.setId("123");
     }
     @Test
     public void should_AddNewBook_WhenNotExists(){
@@ -51,6 +57,15 @@ public class LibraryTest {
         assertFalse(this.library.addBook(invalidBook1));
         Book invalidBook2 = new Book("Halo","Epic","");
         assertFalse(this.library.addBook(invalidBook2));
+    }
+    @Test
+    public void should_loanABook_whenUserAndBookExists(){
+        this.library.addUser(user);
+        this.library.addBook(book);
+        Loan loan = this.library.loanABook(user.getId(),book.getIsbn());
+        assertEquals(loan.getBook(),book);
+        assertEquals(loan.getUser(),user);
+        assertEquals(this.library.getLoans().size(),1);
     }
 //    @Test
 //    public void shouldExistsBook(){

@@ -2,8 +2,10 @@ package edu.eci.cvds.tdd.library;
 
 import edu.eci.cvds.tdd.library.book.Book;
 import edu.eci.cvds.tdd.library.loan.Loan;
+import edu.eci.cvds.tdd.library.loan.LoanStatus;
 import edu.eci.cvds.tdd.library.user.User;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,7 +33,20 @@ public class Library {
     public Map<Book, Integer> getBooks(){
         return this.books;
     }
-
+    /**
+     * get the list of users
+     * @return a user list
+     */
+    public List<User> getUsers(){
+        return users;
+    }
+    /**
+     * get the list of loans
+     * @return a loan list
+     */
+    public List<Loan> getLoans(){
+        return loans;
+    }
     /**
      * Adds a new {@link edu.eci.cvds.tdd.library.book.Book} into the system, the book is store in a Map that contains
      * the {@link edu.eci.cvds.tdd.library.book.Book} and the amount of books available, if the book already exist the
@@ -43,6 +58,7 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
+
             if(book == null) return false;
             if(book.getIsbn() == null || book.getIsbn().isEmpty() ) return false;
             if(!books.containsKey(book)){
@@ -76,7 +92,15 @@ public class Library {
      */
     public Loan loanABook(String userId, String isbn) {
         //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
-        return null;
+        Loan loan = new Loan();
+        Book book = books.keySet().stream().filter(bk->bk.getIsbn().equals(isbn)).findFirst().orElseThrow(() -> new IllegalArgumentException("User does not exist"));;
+        User user = users.stream().filter(usr -> usr.getId().equals(userId)).findFirst().orElseThrow(() -> new IllegalArgumentException("Book does not exist"));;
+        loan.setBook(book);
+        loan.setUser(user);
+        loan.setLoanDate(LocalDateTime.now());
+        loan.setStatus(LoanStatus.ACTIVE);
+        loans.add(loan);
+        return loan;
     }
 
     /**
@@ -95,6 +119,7 @@ public class Library {
 
     public boolean addUser(User user) {
         return users.add(user);
+
     }
 
-}
+    }
