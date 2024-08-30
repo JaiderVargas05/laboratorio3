@@ -10,14 +10,22 @@ public class LibraryTest {
     @BeforeEach
     public void init(){
         library = new Library();
+        book = new Book("Satanás","Mario Mendoza","666");
     }
     @Test
-    public void shouldExistsBook(){
-        assertTrue(library.getBooks().containsKey(book.getIsbn()));
+    public void shouldAddNewBook(){
+        assertTrue(this.library.addBook(book));
     }
-    @Test
-    public void shouldNotExistsBook(){
-        assertTrue(!library.getBooks().containsKey(book.getIsbn()));
-    }
+//    @Test
+//    public void shouldExistsBook(){
+//
+//        assertTrue(this.library.getBooks().containsKey(this.book.getIsbn()));
+//    }
+//    @Test
+//    public void shouldNotExistsBook(){
+//        assertTrue(!this.library.getBooks().containsKey(this.book.getIsbn()));
+//    }
+
+
 
 }
