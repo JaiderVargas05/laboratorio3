@@ -9,15 +9,59 @@ public class LibraryTest {
     private Book book;
     @BeforeEach
     public void init(){
-        library = new Library();
+        this.library = new Library();
+        this.book = new Book("Satanás","Mario Mendoza","666");
     }
     @Test
-    public void shouldExistsBook(){
-        assertTrue(library.getBooks().containsKey(book.getIsbn()));
+    public void should_AddNewBook_WhenNotExists(){
+        assertTrue(this.library.addBook(book));
     }
     @Test
-    public void shouldNotExistsBook(){
-        assertTrue(!library.getBooks().containsKey(book.getIsbn()));
+    public void should_AddBook_WhenTheBookAlredyExists(){
+        this.library.addBook(book);
+        assertTrue(this.library.addBook(book));
     }
+    @Test
+    public void should_IncreaseQuantity_WhenTheBookAlredyExists(){
+        this.library.addBook(book);
+        this.library.addBook(book);
+        assertEquals(this.library.getBooks().get(book),2);
+    }
+    @Test
+    public void should_StartsWithOneBook_WhenIsNew(){
+        this.library.addBook(book);
+        assertEquals(this.library.getBooks().get(book),1);
+    }
+    @Test
+    public void sholdNot_addBook_whenItIsNull(){
+        assertFalse(this.library.addBook(null));
+    }
+
+    @Test
+    public void shouldNot_addBook_whenItHasSameIsbnButDifferentNameOrAuthor(){
+        this.library.addBook(book);
+        Book invalidBook = new Book("Scorpio City","Mario Mendoza","666");
+        assertFalse(this.library.addBook(invalidBook));
+
+    }
+
+    @Test
+    public void shouldNot_addBook_whenItHasEmptyOrNullIsbn(){
+        Book invalidBook1 = new Book("Halo","Epic",null);
+        assertFalse(this.library.addBook(invalidBook1));
+        Book invalidBook2 = new Book("Halo","Epic","");
+        assertFalse(this.library.addBook(invalidBook2));
+    }
+//    @Test
+//    public void shouldExistsBook(){
+//
+//        assertTrue(this.library.getBooks().containsKey(this.book.getIsbn()));
+//    }
+//    @Test
+//    public void shouldNotExistsBook(){
+//        assertTrue(!this.library.getBooks().containsKey(this.book.getIsbn()));
+//    }
+
+
 
 }
