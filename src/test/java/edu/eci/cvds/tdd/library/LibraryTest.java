@@ -21,12 +21,12 @@ public class LibraryTest {
         this.library.addBook(book);
         assertTrue(this.library.addBook(book));
     }
-//    @Test
-//    public void should_IncreaseQuantity_WhenTheBookAlredyExists(){
-//        this.library.addBook(book);
-//        this.library.addBook(book);
-//        assertEquals(this.library.getBooks().size(),2);
-//    }
+    @Test
+    public void should_IncreaseQuantity_WhenTheBookAlredyExists(){
+        this.library.addBook(book);
+        this.library.addBook(book);
+        assertEquals(this.library.getBooks().get(book),2);
+    }
 //    @Test
 //    public void shouldExistsBook(){
 //
