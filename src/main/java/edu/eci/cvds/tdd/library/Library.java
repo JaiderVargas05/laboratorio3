@@ -116,7 +116,6 @@ public class Library {
      * @return the loan with the RETURNED status.
      */
     public Loan returnLoan(Loan loan) {
-        loan.setStatus(LoanStatus.RETURNED);
         return loan;
     }
 

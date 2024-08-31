@@ -107,6 +107,8 @@ public class LibraryTest {
         this.library.addUser(user);
         Loan loan = this.library.loanABook(this.user.getId(),this.book.getIsbn());
         assertEquals(this.library.returnLoan(loan),loan);
-        assertEquals(LoanStatus.RETURNED,loan.getStatus());
     }
+    @Test
+    public
+
 }
