@@ -32,6 +32,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.LibraryTest.should_changeStatus_whenReturnALoan.executor": "Run",
     "JUnit.LibraryTest.should_loanABook_whenUserExists.executor": "Run",
     "Maven.Library [clean].executor": "Run",
     "Maven.Library [package].executor": "Run",
@@ -48,7 +49,23 @@
       <command value="mvn package" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.LibraryTest.should_changeStatus_whenReturnALoan">
+    <configuration name="LibraryTest.should_changeStatus_whenReturnALoan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.eci.cvds.tdd.library.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.eci.cvds.tdd.library" />
+      <option name="MAIN_CLASS_NAME" value="edu.eci.cvds.tdd.library.LibraryTest" />
+      <option name="METHOD_NAME" value="should_changeStatus_whenReturnALoan" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LibraryTest.should_loanABook_whenUserExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
       <extension name="coverage">
@@ -80,6 +97,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryTest.should_changeStatus_whenReturnALoan" />
         <item itemvalue="JUnit.LibraryTest.should_loanABook_whenUserExists" />
       </list>
     </recent_temporary>

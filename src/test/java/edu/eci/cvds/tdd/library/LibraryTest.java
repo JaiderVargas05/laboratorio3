@@ -114,8 +114,12 @@ public class LibraryTest {
         this.library.addUser(user);
         assertThrows(IllegalArgumentException.class,() -> this.library.returnLoan(new Loan()));
     }
-//    @Test
-//    public void should_changeStatus_whenReturnALoan(){
-//
-//    }
+    @Test
+    public void should_changeStatus_whenReturnALoan(){
+        this.library.addBook(book);
+        this.library.addUser(user);
+        Loan loan = this.library.loanABook(this.user.getId(),this.book.getIsbn());
+        this.library.returnLoan(loan);
+        assertEquals(LoanStatus.RETURNED,loan.getStatus());
+    }
 }
