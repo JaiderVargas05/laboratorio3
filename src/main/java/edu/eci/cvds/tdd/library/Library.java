@@ -119,6 +119,7 @@ public class Library {
         boolean existsLoan = this.loans.stream().anyMatch(ln->ln==loan);
         if(!existsLoan) throw new IllegalArgumentException("The loan does not exist");
         loan.setStatus(LoanStatus.RETURNED);
+        loan.setReturnDate(LocalDateTime.now());
         return loan;
     }
 

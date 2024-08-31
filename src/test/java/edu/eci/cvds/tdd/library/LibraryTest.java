@@ -122,4 +122,13 @@ public class LibraryTest {
         this.library.returnLoan(loan);
         assertEquals(LoanStatus.RETURNED,loan.getStatus());
     }
+    @Test
+    public void should_changeReturnDate_whenReturnALoan(){
+        this.library.addBook(book);
+        this.library.addUser(user);
+        Loan loan = this.library.loanABook(this.user.getId(),this.book.getIsbn());
+        this.library.returnLoan(loan);
+        assertNotNull(loan.getReturnDate());
+    }
+    
 }
