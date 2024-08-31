@@ -91,8 +91,6 @@ public class Library {
      * @return The new created loan.
      */
     public Loan loanABook(String userId, String isbn) {
-        //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
-
         Book book = books.keySet().stream().filter(bk->bk.getIsbn().equals(isbn)).findFirst().orElseThrow(() -> new IllegalArgumentException("Book does not exist"));
         if(books.get(book)==0) throw new IllegalArgumentException("There are not available books");
         User user = users.stream().filter(usr -> usr.getId().equals(userId)).findFirst().orElseThrow(() -> new IllegalArgumentException("User does not exist"));
@@ -118,8 +116,8 @@ public class Library {
      * @return the loan with the RETURNED status.
      */
     public Loan returnLoan(Loan loan) {
-        //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
-        return null;
+        loan.setStatus(LoanStatus.RETURNED);
+        return loan;
     }
 
     public boolean addUser(User user) {

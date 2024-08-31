@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import edu.eci.cvds.tdd.library.book.Book;
 import edu.eci.cvds.tdd.library.user.User;
 import edu.eci.cvds.tdd.library.loan.*;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 public class LibraryTest {
@@ -100,16 +101,12 @@ public class LibraryTest {
         this.library.loanABook(user.getId(),book.getIsbn());
         assertThrows(IllegalArgumentException.class,() -> this.library.loanABook(user.getId(),book.getIsbn()));
     }
-//    @Test
-//    public void shouldExistsBook(){
-//
-//        assertTrue(this.library.getBooks().containsKey(this.book.getIsbn()));
-//    }
-//    @Test
-//    public void shouldNotExistsBook(){
-//        assertTrue(!this.library.getBooks().containsKey(this.book.getIsbn()));
-//    }
-
-
-
+    @Test
+    public void should_returnALoan_whenTheLoanExists(){
+        this.library.addBook(book);
+        this.library.addUser(user);
+        Loan loan = this.library.loanABook(this.user.getId(),this.book.getIsbn());
+        assertEquals(this.library.returnLoan(loan),loan);
+        assertEquals(LoanStatus.RETURNED,loan.getStatus());
+    }
 }
