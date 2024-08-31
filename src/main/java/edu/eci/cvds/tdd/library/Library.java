@@ -116,6 +116,8 @@ public class Library {
      * @return the loan with the RETURNED status.
      */
     public Loan returnLoan(Loan loan) {
+        boolean existsLoan = this.loans.stream().anyMatch(ln->ln==loan);
+        if(!existsLoan) throw new IllegalArgumentException("The loan does not exist");
         return loan;
     }
 

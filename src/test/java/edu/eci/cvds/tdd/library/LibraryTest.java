@@ -109,6 +109,13 @@ public class LibraryTest {
         assertEquals(this.library.returnLoan(loan),loan);
     }
     @Test
-    public
-
+    public void shouldNot_returnALoan_whenItNotExists(){
+        this.library.addBook(book);
+        this.library.addUser(user);
+        assertThrows(IllegalArgumentException.class,() -> this.library.returnLoan(new Loan()));
+    }
+//    @Test
+//    public void should_changeStatus_whenReturnALoan(){
+//
+//    }
 }
