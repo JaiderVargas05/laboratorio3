@@ -120,6 +120,8 @@ public class Library {
         if(!existsLoan) throw new IllegalArgumentException("The loan does not exist");
         loan.setStatus(LoanStatus.RETURNED);
         loan.setReturnDate(LocalDateTime.now());
+        Book book = books.keySet().stream().filter(bk->bk==loan.getBook()).findFirst().orElse(null);
+        books.replace(book,books.get(book)+1);
         return loan;
     }
 

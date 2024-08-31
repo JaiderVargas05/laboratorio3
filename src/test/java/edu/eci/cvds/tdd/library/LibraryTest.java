@@ -130,5 +130,23 @@ public class LibraryTest {
         this.library.returnLoan(loan);
         assertNotNull(loan.getReturnDate());
     }
-    
+    @Test
+    public void should_increaseBooks_whenReturnALoan(){
+        this.library.addBook(book);
+        assertEquals(this.library.getBooks().get(book),1);
+        this.library.addUser(user);
+        Loan loan = this.library.loanABook(this.user.getId(),this.book.getIsbn());
+        assertEquals(this.library.getBooks().get(book),0);
+        this.library.returnLoan(loan);
+        assertEquals(this.library.getBooks().get(book),1);
+    }
+//    @Test
+//    public void shouldNot_returnALoan_whenItIsReturned(){
+//        this.library.addBook(book);
+//        this.library.addUser(user);
+//        Loan loan = this.library.loanABook(this.user.getId(),this.book.getIsbn());
+//        this.library.returnLoan(loan);
+//        assertThrows(IllegalArgumentException.class,()->this.library.returnLoan(loan));
+//    }
+
 }
