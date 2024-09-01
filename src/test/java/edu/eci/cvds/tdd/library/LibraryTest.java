@@ -14,7 +14,7 @@ public class LibraryTest {
     @BeforeEach
     public void init(){
         this.library = new Library();
-        this.book = new Book("Satanás","Mario Mendoza","666");
+        this.book = new Book("Satanas","Mario Mendoza","666");
         this.user = new User();
         user.setName("Sofia");
         user.setId("123");
@@ -148,5 +148,23 @@ public class LibraryTest {
         this.library.returnLoan(loan);
         assertThrows(IllegalArgumentException.class,()->this.library.returnLoan(loan));
     }
-
+    @Test
+    public void should_getBookTitle(){
+        assertEquals(book.getTittle(),"Satanas");
+    }
+    @Test
+    public void should_getBookAuthor(){
+        assertEquals(book.getAuthor(),"Mario Mendoza");
+    }
+    @Test
+    public void should_getLoanDate(){
+        this.library.addBook(book);
+        this.library.addUser(user);
+        Loan loan = this.library.loanABook(this.user.getId(),this.book.getIsbn());
+        assertNotNull(loan.getLoanDate());
+    }
+    @Test
+    public void should_getName(){
+        assertEquals(user.getName(),"Sofia");
+    }
 }
